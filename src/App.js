@@ -8,7 +8,19 @@ import ListTable from './components/ListTable';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super();
+
+    this.state = {
+      titles: ["DaVinci Code","Sapiens","Ready Player One"],
+      authors: ["Dan Brown", "Yuval Harari", "Ernest Cline"]
+    }
+
+  }
+
   render() {
+
     return (
       
       <div className="container-fluid">
@@ -28,7 +40,7 @@ class App extends Component {
 
                 <RegisterAuthor /> 
 
-                <ListTable />
+                <ListTable listTitle={this.state.titles} listAuthor={this.state.authors} />
 
               </div>
             </div>

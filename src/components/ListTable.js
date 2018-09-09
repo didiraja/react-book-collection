@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 
 class ListTable extends Component {
   render() {
+
+    // console.log(this.props.listTitle);
+
+    const propsList = [this.props.listTitle, this.props.listAuthor];
+
+    console.log(propsList);
+
     return (
       
       <table className="table table-bordered mt-4">
@@ -12,18 +19,12 @@ class ListTable extends Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>DaVinci Code</td>
-            <td>Dan Brown</td>
-          </tr>
-          <tr>
-            <td>Sapiens</td>
-            <td>Yuval Harari</td>
-          </tr>
-          <tr>
-            <td>Ready Player One</td>
-            <td>Ernest Cline</td>
-          </tr>
+
+          {/* <tr>
+            <td>{propsList.titles}</td>
+            <td>{propsList.authors}</td>
+          </tr> */}
+
         </tbody>
       </table>
 
