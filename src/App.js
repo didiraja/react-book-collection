@@ -13,8 +13,23 @@ class App extends Component {
     super();
 
     this.state = {
-      titles: ["DaVinci Code","Sapiens","Ready Player One"],
-      authors: ["Dan Brown", "Yuval Harari", "Ernest Cline"]
+      books: [
+        {
+          title: "DaVinci Code",
+          author: "Dan Brown",
+          price: ""
+        },
+        {
+          title: "Sapiens",
+          author: "Yuval Harari",
+          price: ""
+        },
+        {
+          title: "Ready Player One",
+          author: "Ernest Cline",
+          price: ""
+        }
+      ]
     }
 
   }
@@ -31,7 +46,7 @@ class App extends Component {
             <MenuRouter />    
           </div>
 
-          <div className="col-md-10">
+          <div className="col-md-10 pl-md-0">
 
             <TitleHeading heading="Register Author" /> 
 
@@ -40,7 +55,7 @@ class App extends Component {
 
                 <RegisterAuthor /> 
 
-                <ListTable listTitle={this.state.titles} listAuthor={this.state.authors} />
+                <ListTable books={this.state.books} />
 
               </div>
             </div>
