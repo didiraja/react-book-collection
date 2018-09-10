@@ -53,7 +53,7 @@ class App extends Component {
             <div className="row">
               <div className="col-md-6 mx-auto">
 
-                <RegisterAuthor /> 
+                <RegisterAuthor books={this.state.books} /> 
 
                 <ListTable books={this.state.books} />
 
