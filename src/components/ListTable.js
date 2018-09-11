@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ListTable extends Component {
   render() {
     
-    const propsList = this.props.books;
+    const stateBooks = this.props.books;
 
     return (
       
@@ -16,10 +16,10 @@ class ListTable extends Component {
         </thead>
         <tbody>
 
-        {propsList.map(
-          (books, key) => <tr key={key}>
-            <td>{books.author}</td>
-            <td>{books.title}</td>
+        {stateBooks.map(
+          (stateContent, key) => <tr key={key}>
+            <td>{stateContent.author}</td>
+            <td>{stateContent.title}</td>
           </tr>)}
 
         </tbody>

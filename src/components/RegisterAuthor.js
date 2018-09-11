@@ -1,12 +1,38 @@
 import React, { Component } from 'react';
+import ListTable from './ListTable';
 
 class RegisterAuthor extends Component {
+
+  constructor(props) {
+    super();
+
+    this.state = {
+      books: [
+        {
+          title: "DaVinci Code",
+          author: "Dan Brown",
+          price: ""
+        },
+        {
+          title: "Sapiens",
+          author: "Yuval Harari",
+          price: ""
+        },
+        {
+          title: "Ready Player One",
+          author: "Ernest Cline",
+          price: ""
+        }
+      ]
+    }
+    
+  }
 
   componentWillMount() {
 
     this.stateBooks = '';
 
-    this.stateBooks = this.props.books;
+    this.stateBooks = this.state.books;
     
   }
 
@@ -19,13 +45,13 @@ class RegisterAuthor extends Component {
       author: this.refs.registerAuthor.value
     })
 
-    console.log(this.stateBooks);
+    this.setState({
+      books: this.stateBooks
+    });
     
   }
   
   render() {
-
-    console.log(this.stateBooks);
 
     return (
       
@@ -45,6 +71,9 @@ class RegisterAuthor extends Component {
           <button type="submit" className="btn btn-lg d-block mx-auto btn-primary">Submit</button>
 
         </form>
+
+        <ListTable books={this.stateBooks} />
+
       </React.Fragment>
 
     );
