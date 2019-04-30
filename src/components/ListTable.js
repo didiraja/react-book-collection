@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 
 class ListTable extends Component {
+
+  constructor(props) {
+    super();
+  }
+
   render() {
     
-    const stateBooks = this.props.books;
+    const books = this.props.books;
 
     return (
       
@@ -16,10 +21,10 @@ class ListTable extends Component {
         </thead>
         <tbody>
 
-        {stateBooks.map(
-          (stateContent, key) => <tr key={key}>
-            <td>{stateContent.author}</td>
-            <td>{stateContent.title}</td>
+        {books.map(
+          (book, key) => <tr key={key}>
+            <td>{book.author}</td>
+            <td>{book.name}</td>
           </tr>)}
 
         </tbody>

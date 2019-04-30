@@ -1,80 +1,52 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ListTable from './ListTable';
 
 class RegisterAuthor extends Component {
 
   constructor(props) {
-    super();
+    super(props);
 
-    this.state = {
-      books: [
-        {
-          title: "DaVinci Code",
-          author: "Dan Brown",
-          price: ""
-        },
-        {
-          title: "Sapiens",
-          author: "Yuval Harari",
-          price: ""
-        },
-        {
-          title: "Ready Player One",
-          author: "Ernest Cline",
-          price: ""
-        }
-      ]
-    }
-    
-  }
+    this.books = this.props.content
 
-  componentWillMount() {
-
-    this.stateBooks = '';
-
-    this.stateBooks = this.state.books;
-    
   }
 
   newEntry(e) {
 
-    e.preventDefault();
+    e.preventDefault()
 
-    this.stateBooks.push({
-      title: this.refs.registerTitle.value,
+    this.books.push({
+      name: this.refs.registerTitle.value,
       author: this.refs.registerAuthor.value
     })
 
-    this.setState({
-      books: this.stateBooks
-    });
-    
   }
   
   render() {
 
     return (
       
-      <React.Fragment>
-        <form id="formCadastro" onSubmit={this.newEntry.bind(this)}>
+      <Fragment>
+        <form id="formCadastro" onSubmit={(e) => this.newEntry(e)}>
 
           <div className="form-group">
             <label htmlFor="registerAuthor-title">Title:</label>
-            <input type="text" className="form-control" ref="registerTitle" placeholder="eg: DaVinci Code"/>
+            <input type="text" className="form-control" ref="registerTitle"
+              placeholder={`eg: ${this.books[0].name}`} />
           </div>
           
           <div className="form-group">
             <label htmlFor="registerAuthor-author">Author:</label>
-            <input type="text" className="form-control" ref="registerAuthor" placeholder="eg: Dan Brown"/>
+            <input type="text" className="form-control" ref="registerAuthor"
+              placeholder={`eg: ${this.books[0].author}`} />
           </div>
 
           <button type="submit" className="btn btn-lg d-block mx-auto btn-primary">Submit</button>
 
         </form>
 
-        <ListTable books={this.stateBooks} />
+        <ListTable books={this.books} />
 
-      </React.Fragment>
+      </Fragment>
 
     );
   }
