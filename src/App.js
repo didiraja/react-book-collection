@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import MainForm from './components/MainForm';
 import MenuRouter from './components/MenuRouter';
@@ -32,6 +33,18 @@ class App extends Component {
   render() {
 
     return (
+    <Fragment>
+      <Router>
+        {/* <Route path="/" exact component={
+          
+        } /> */}
+        <Route path="/author/" component={
+          () => <MainForm title="Register Author" content={this.state.books} />
+        } />
+        <Route path="/title/" component={
+          () => <MainForm title="Register Title" content={this.state.books} />
+        } />
+      </Router>
       
       <div className="container-fluid">
 
@@ -50,6 +63,7 @@ class App extends Component {
         </div>
 
       </div>
+    </Fragment>
 
     );
   }
