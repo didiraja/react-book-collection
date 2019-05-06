@@ -8,6 +8,7 @@ class Title extends Component {
 
   render() {
 
+    // eslint-disable-next-line
     this.props.title == '' ? "Texto Padrão" : this.props.title
 
     return (
