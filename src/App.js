@@ -1,10 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from './components/Home'
 import MainForm from './components/MainForm';
 import MenuRouter from './components/MenuRouter';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 class App extends Component {
 
@@ -33,37 +34,36 @@ class App extends Component {
   render() {
 
     return (
-    <Fragment>
-      <Router>
-        {/* <Route path="/" exact component={
-          
-        } /> */}
-        <Route path="/author/" component={
-          () => <MainForm title="Register Author" content={this.state.books} />
-        } />
-        <Route path="/title/" component={
-          () => <MainForm title="Register Title" content={this.state.books} />
-        } />
-      </Router>
-      
-      <div className="container-fluid">
+      <Fragment>
+        <Router>
+        
+        <div className="container-fluid">
 
-        <div className="row">
+          <div className="row">
 
-          <div className="col-md-2 col-router bg-dark border-right border-secondary">
-            <MenuRouter />    
-          </div>
+            <div className="col-md-2 col-router bg-dark">
+              <MenuRouter />    
+            </div>
 
-          <div className="col-md-10 pl-md-0">
+            <div className="col-md-10 pl-md-0">
 
-            <MainForm title="Register Author" content={this.state.books} /> 
+              <Route path="/" exact component={
+                () => <Home />
+              } />
+              <Route path="/author/" component={
+                () => <MainForm title="Register Author" content={this.state.books} />
+              } />
+              <Route path="/title/" component={
+                () => <MainForm title="Register Title" content={this.state.books} />
+              } />
+
+            </div>
 
           </div>
 
         </div>
-
-      </div>
-    </Fragment>
+        </Router> 
+      </Fragment>
 
     );
   }

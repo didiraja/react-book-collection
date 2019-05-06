@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import Title from './Title'
 import RegisterAuthor from './RegisterAuthor';
 
 class MainForm extends Component {
@@ -10,7 +11,7 @@ class MainForm extends Component {
   render() {
     return (
       <Fragment>
-        <p className="h1 text-center pt-5 pb-3 mb-4 border-bottom">{this.props.title}</p>
+        <Title title={this.props.title} />
 
         <div className="row">
           <div className="col-md-6 mx-auto">
