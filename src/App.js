@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from './components/Home'
 import MainForm from './components/MainForm';
@@ -34,8 +34,7 @@ class App extends Component {
   render() {
 
     return (
-      <Fragment>
-        <Router>
+      <Router>
         
         <div className="container-fluid">
 
@@ -63,7 +62,6 @@ class App extends Component {
 
         </div>
         </Router> 
-      </Fragment>
 
     );
   }
