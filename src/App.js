@@ -4,6 +4,9 @@ import Home from './components/Home'
 import MainForm from './components/MainForm';
 import MenuRouter from './components/MenuRouter';
 
+import { Provider } from 'react-redux'
+import store from './redux'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
@@ -34,6 +37,7 @@ class App extends Component {
   render() {
 
     return (
+      <Provider store={store}>
       <Router>
         
         <div className="container-fluid">
@@ -61,7 +65,8 @@ class App extends Component {
           </div>
 
         </div>
-        </Router> 
+        </Router>
+        </Provider>
 
     );
   }

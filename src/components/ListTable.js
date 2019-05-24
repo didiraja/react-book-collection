@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
+import { connect } from 'react-redux'
+
 class ListTable extends Component {
 
-  render() {
+  render({books}) {
     
-    const books = this.props.books
     const title = this.props.title
     const categories = ['Author', 'Title']
 
@@ -23,7 +24,7 @@ class ListTable extends Component {
         <tbody>
           {
             title === "Register Author" &&
-              books.map(
+              this.books.map(
               (book, key) => <tr key={key}>
                   <td>{book.author}</td>
                   <td>{book.name}</td>
@@ -31,7 +32,7 @@ class ListTable extends Component {
           }
           {
             title === "Register Title" &&
-              books.map(
+              this.books.map(
               (book, key) => <tr key={key}>
                   <td>{book.name}</td>
                   <td>{book.author}</td>
@@ -44,4 +45,4 @@ class ListTable extends Component {
   }
 }
 
-export default ListTable
+export default connect(state => ({ books: state }))(ListTable)
