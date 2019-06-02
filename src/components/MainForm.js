@@ -16,7 +16,7 @@ class MainForm extends Component {
         <div className="row">
           <div className="col-md-6 mx-auto">
 
-            <RegisterAuthor title={this.props.title} content={this.props.content} /> 
+            <RegisterAuthor title={this.props.title} /> 
 
           </div>
         </div>

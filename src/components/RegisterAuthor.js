@@ -1,23 +1,26 @@
 import React, { Component, Fragment } from 'react';
+import { connect } from 'react-redux'
+
+import { addBook } from "../redux";
+
 import ListTable from './ListTable';
 
 class RegisterAuthor extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.books = this.props.content
-
+    this.dispatch = this.props.dispatch
   }
 
   newEntry(e) {
 
     e.preventDefault()
 
-    this.books.push({
+    this.dispatch(addBook({
       name: this.refs.registerTitle.value,
       author: this.refs.registerAuthor.value
-    })
+    }))
 
   }
   
@@ -31,13 +34,13 @@ class RegisterAuthor extends Component {
           <div className="form-group">
             <label htmlFor="registerAuthor-title">Title:</label>
             <input type="text" className="form-control" ref="registerTitle"
-              placeholder={`eg: ${this.books[0].name}`} />
+              defaultValue="Dan Brown" />
           </div>
           
           <div className="form-group">
             <label htmlFor="registerAuthor-author">Author:</label>
             <input type="text" className="form-control" ref="registerAuthor"
-              placeholder={`eg: ${this.books[0].author}`} />
+              defaultValue="DaVinci Code" />
           </div>
 
           <button type="submit" className="btn btn-lg d-block mx-auto btn-primary">Submit</button>
@@ -52,4 +55,4 @@ class RegisterAuthor extends Component {
   }
 }
 
-export default RegisterAuthor;
+export default connect()(RegisterAuthor)

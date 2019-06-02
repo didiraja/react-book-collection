@@ -1,25 +1,41 @@
 // STORE
 import { createStore } from "redux"
 
-export function reducer() {
-  return [
+const INITIAL_STATE = [
+  {
+    id: 1,
+    name: "Naruto",
+    author: "Masashi Kishimoto",
+  },
+  {
+    id: 2,
+    name: "Saint Seiya",
+    author: "Masami Kurumada",
+  }
+] 
+
+export function reducer(state = INITIAL_STATE, action) {
+  
+  if (action.type == 'ADD_BOOK') {
+    
+    return [...state,
     {
-      id: 1,
-      name: "Naruto",
-      author: "Masashi Kishimoto",
-    }
-  ] 
+      name: action.book.name,
+      author: action.book.author,
+    }]
+  }
+
+
+  return state
+
 }
 
 export const store = createStore(reducer)
 
-// ACTIONS
-export const ADD_BOOK = "ADD_BOOK";
-
-let id = 1
-
-export const addBook = (obj) => ({
-  type: ADD_BOOK,
-  id: id++,
-  obj
-});
+// ACTION
+export function addBook(bookObj) {
+  return {
+    type: 'ADD_BOOK',
+    book: bookObj
+  }
+}

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-
 class ListTable extends Component {
 
   render() {
     
-    const books = this.props.books
+    const books = this.props.books // passado pelo Redux
+
     const title = this.props.title
     const categories = ['Author', 'Title']
 
