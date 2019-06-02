@@ -5,7 +5,11 @@ import Title from './Title'
 const Home = () => {
   return (
 
-    <Title title="Welcome!" />
+    <div className="row">
+      <div className="col-md-12">
+        <Title title="Welcome!" />
+      </div>
+    </div>
 
   )
 }

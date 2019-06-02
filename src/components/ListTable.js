@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+
 
 class ListTable extends Component {
 
@@ -44,4 +46,4 @@ class ListTable extends Component {
   }
 }
 
-export default ListTable
+export default connect(state => ({ books: state }))(ListTable)

@@ -44,7 +44,7 @@ class RegisterAuthor extends Component {
 
         </form>
 
-        <ListTable title={this.props.title} books={this.books} />
+        <ListTable title={this.props.title} />
 
       </Fragment>
 
