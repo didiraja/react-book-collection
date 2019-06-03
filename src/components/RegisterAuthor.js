@@ -34,13 +34,13 @@ class RegisterAuthor extends Component {
           <div className="form-group">
             <label htmlFor="registerAuthor-title">Title:</label>
             <input type="text" className="form-control" ref="registerTitle"
-              placeholder="Dan Brown" />
+              placeholder="Book's Title" />
           </div>
           
           <div className="form-group">
             <label htmlFor="registerAuthor-author">Author:</label>
             <input type="text" className="form-control" ref="registerAuthor"
-              placeholder="DaVinci Code" />
+              placeholder="Book's Author" />
           </div>
 
           <button type="submit" className="btn btn-lg d-block mx-auto btn-primary">Submit</button>

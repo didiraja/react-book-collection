@@ -4,13 +4,13 @@ import { createStore } from "redux"
 const INITIAL_STATE = [
   {
     id: 1,
-    name: "Naruto",
-    author: "Masashi Kishimoto",
+    name: "Sapiens",
+    author: "Yuval Harari",
   },
   {
     id: 2,
-    name: "Saint Seiya",
-    author: "Masami Kurumada",
+    name: "The Hitchhiker's Guide to the Galaxy",
+    author: "Douglas Adams",
   }
 ] 
 
@@ -29,7 +29,8 @@ export function reducer(state = INITIAL_STATE, action) {
 
 }
 
-export const store = createStore(reducer)
+export const store = createStore(reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 // ACTION
 export function addBook(bookObj) {
