@@ -22,7 +22,7 @@ class App extends Component {
             </div>
 
             <div className="col-md-10 pl-md-0">
-              <Route path="/home/" exact component={() => <Home />} />
+              <Route path="/(|home)/" component={() => <Home />} />
 
               <Route
                 path="/title/"

@@ -1,26 +1,21 @@
-import React, { Component, Fragment } from 'react';
-import Title from './Title'
-import RegisterAuthor from './RegisterAuthor';
+import React, { Component } from "react";
+import Title from "./Title";
+import RegisterAuthor from "./RegisterAuthor";
 
 class MainForm extends Component {
-
   constructor(props) {
     super();
   }
 
   render() {
     return (
-      <Fragment>
-        <Title title={this.props.title} />
+      <div className="row">
+        <div className="col-md-8 mx-auto">
+          <Title title={this.props.title} />
 
-        <div className="row">
-          <div className="col-md-6 mx-auto">
-
-            <RegisterAuthor title={this.props.title} /> 
-
-          </div>
+          <RegisterAuthor title={this.props.title} />
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

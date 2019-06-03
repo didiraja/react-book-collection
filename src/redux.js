@@ -16,7 +16,7 @@ const INITIAL_STATE = [
 
 export function reducer(state = INITIAL_STATE, action) {
   
-  if (action.type == 'ADD_BOOK') {
+  if (action.type === 'ADD_BOOK') {
     
     return [...state,
     {

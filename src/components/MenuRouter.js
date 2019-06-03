@@ -9,7 +9,7 @@ class MenuRouter extends Component {
 
         <ul className="list-menu">
           <li className="list-item">
-            <Link to="/">Home</Link>
+            <Link to="/home/">Home</Link>
           </li>
           <li className="list-item">
             <Link to="/author/">Autores</Link>
